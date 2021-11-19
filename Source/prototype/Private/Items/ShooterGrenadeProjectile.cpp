@@ -6,6 +6,7 @@
 #include "Components/SphereComponent.h"
 #include "ShooterBaseCharacter.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
+#include "PhysicsEngine/RadialForceComponent.h"
 
 // Sets default values
 AShooterGrenadeProjectile::AShooterGrenadeProjectile()
@@ -35,6 +36,13 @@ AShooterGrenadeProjectile::AShooterGrenadeProjectile()
 	ProjectileMovement->bShouldBounce = true;
 
 	ProjectileMovement->OnProjectileStop.AddDynamic(this, &AShooterGrenadeProjectile::OnStop);
+
+	RadialForceComp = CreateDefaultSubobject<URadialForceComponent>(TEXT("RadialForceComp"));
+	RadialForceComp->SetupAttachment(CollisionComp);
+	RadialForceComp->Radius = 500;
+	RadialForceComp->bImpulseVelChange = true;
+	RadialForceComp->bAutoActivate = false; // Prevent component from ticking, and only use FireImpulse() instead
+	RadialForceComp->bIgnoreOwningActor = true; // ignore self
 
 	// Die after 3 seconds by default
 	//InitialLifeSpan = 3.0f;

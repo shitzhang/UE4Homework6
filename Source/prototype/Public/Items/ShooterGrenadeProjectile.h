@@ -9,6 +9,7 @@
 
 class USphereComponent;
 class UProjectileMovementComponent;
+class URadialForceComponent;
 
 
 UCLASS()
@@ -42,6 +43,10 @@ public:
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
 
 protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	URadialForceComponent* RadialForceComp;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

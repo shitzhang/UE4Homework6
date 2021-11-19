@@ -6,7 +6,7 @@
 捡枪：准心对准枪后按E键  
 丢枪：按G键  
 
-实现了抛体枪械的子弹在金属材质和土壤材质的不同表现  
+实现了抛体枪械的子弹的爆炸效果和在金属材质和土壤材质的不同表现  
 
   
 ## 基本操作  
@@ -15,9 +15,9 @@
 Pick：E  
 Drop：G  
   
-The zip file of exe(Windows-64bit) and video are in:  
-https://pan.baidu.com/s/1zJGk_ynFCSZliZd8cbSmeg  
-password: ezyz  
+The zip file of exe(Windows-64bit) and video are in:   
+https://pan.baidu.com/s/1-EGsRSGjS_t_oVr6OiJPLw  
+password: 049i  
 
 
 
